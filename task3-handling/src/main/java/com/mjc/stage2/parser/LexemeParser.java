@@ -12,7 +12,7 @@ public class LexemeParser {
     public void parse(AbstractTextComponent abstractTextComponent, String s) {
         char[] arr = s.toCharArray();
         for (char c : arr) {
-            abstractTextComponent.add(new SymbolLeaf(TextComponentType.WORD, c));
+            abstractTextComponent.add(new SymbolLeaf(c, TextComponentType.WORD));
         }
     }
 }

@@ -11,7 +11,7 @@ public class WordParser extends AbstractTextParser {
         System.out.println("word parser");
         char[] arr = string.toCharArray();
         for (char c : arr) {
-            abstractTextComponent.add(new SymbolLeaf(TextComponentType.WORD, c));
+            abstractTextComponent.add(new SymbolLeaf(c, TextComponentType.WORD));
         }
 
     }

@@ -6,8 +6,8 @@ public class SymbolLeaf extends AbstractTextComponent{
 
     // Write your code here!
 
-    public SymbolLeaf(TextComponentType componentType, char value) {
-        super(componentType);
+    public SymbolLeaf(char value,TextComponentType textComponentType) {
+        super(textComponentType);
         this.value = value;
     }
 
