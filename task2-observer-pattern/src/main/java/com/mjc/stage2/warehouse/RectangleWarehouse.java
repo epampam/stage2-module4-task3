@@ -1,6 +1,5 @@
 package com.mjc.stage2.warehouse;
 
-
 import com.mjc.stage2.entity.RectangleValues;
 
 import java.util.HashMap;

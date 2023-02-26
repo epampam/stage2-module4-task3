@@ -1,12 +1,13 @@
 package com.mjc.stage2.entity;
 
+import com.mjc.stage2.Observable;
 import com.mjc.stage2.Observer;
 import com.mjc.stage2.event.RectangleEvent;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rectangle {
+public class Rectangle implements Observable {
     private int id;
     private double sideA;
     private double sideB;
@@ -49,10 +50,18 @@ public class Rectangle {
     }
 
     // Write your code here!
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
 
-    private void notifyObserver() {
+
+    public void notifyObserver() {
         RectangleEvent rectangleEvent = new RectangleEvent(this);
         observers.forEach(observer -> observer.handleEvent(rectangleEvent));
 
     }
+
 }
