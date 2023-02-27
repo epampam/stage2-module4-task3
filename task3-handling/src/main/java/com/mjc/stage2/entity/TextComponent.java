@@ -2,6 +2,7 @@ package com.mjc.stage2.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TextComponent extends AbstractTextComponent {
     protected List<AbstractTextComponent> componentList = new ArrayList<>();
@@ -13,11 +14,7 @@ public class TextComponent extends AbstractTextComponent {
 
     @Override
     public String operation() {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (AbstractTextComponent abstractTextComponent : componentList){
-            stringBuilder.append(abstractTextComponent.operation());
-        }
-        return stringBuilder.toString();
+        return componentList.stream().map(AbstractTextComponent::operation).collect(Collectors.joining());
     }
 
     @Override
